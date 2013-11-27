@@ -181,9 +181,6 @@ class simplecertificate {
             $contextid = $context;
         }
         
-        $context = context_system::instance();
-        $contextid = $context->id;
-        
         if ($user=$DB->get_record("user", array('id'=>$issuecert->userid))) {
         	$filename = str_replace(' ', '_', clean_filename($issuecert->certificatename .' '. fullname($user) .' '. $issuecert->id . '.pdf'));
         } else {
